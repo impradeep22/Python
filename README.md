@@ -1,2 +1,2 @@
 # Python
-This repo contain the Projects related to python
+This contain the projects related to python langauge.
