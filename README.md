@@ -1,2 +1,2 @@
 # Python
-This contain the projects related to python langauge.
+This contains the projects related to python langauge.
