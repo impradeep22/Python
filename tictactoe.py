@@ -1,11 +1,15 @@
+# Define the 3 X 3 board
 board = [' ' for x in range(10)]
 
+#To insert letter in the board or to write letter on the baord
 def insertLetter(letter,pos):
     board[pos] = letter
-
+    
+#To check whether space is available on the baord or not
 def spaceIsFree(pos):
     return board[pos] == ' '
 
+#Pritting board
 def printBoard(board):
     print(' ' + board[1] + ' | ' + board[2] + ' | ' + board[3] + ' ')
     print('------------')
@@ -13,12 +17,14 @@ def printBoard(board):
     print('------------')
     print(' ' + board[7] + ' | ' + board[8] + ' | ' + board[9] + ' ')
 
+# To check whether board is full or not
 def isBoardFull(board):
     if board.count(' ') > 1:
         return False
     else:
         return True
 
+#To check winner of the game
 def isWinner(b,l):
     return ((b[1] == l and b[2] == l and b[3] == l) or
             (b[4] == l and b[5] == l and b[6] == l) or
@@ -29,6 +35,7 @@ def isWinner(b,l):
             (b[1] == l and b[5] == l and b[9] == l) or
             (b[3] == l and b[5] == l and b[7] == l))
 
+#Define the player move in the game
 def playerMove():
     run = True
     while run:
@@ -44,6 +51,7 @@ def playerMove():
         except:
             print('Please type a number.')
 
+#Define the computer move in the game
 def computerMove():
     possibleMoves = [x for x, letter in enumerate(board) if letter == ' ' and x != 0]
     move = 0
@@ -76,13 +84,15 @@ def computerMove():
         return move
     if move == 0:
         return 0
-        
+
+#Ramdom fuction require for computerMove function.        
 def selectRandom(li):
     import random
     ln = len(li)
     r = random.randrange(0,ln)
     return li[r]
 
+#Main logic of the game
 def main():
     print("Welcome to Tic Tac Toe game!")
     printBoard(board)
@@ -109,6 +119,7 @@ def main():
     if isBoardFull(board):
         print(" !! Game Over !!")
 
+# Start of the game
 while True:
     x = 'y'
     if x.lower() == 'y' :
